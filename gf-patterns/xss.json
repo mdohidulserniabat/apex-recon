@@ -1,0 +1,7 @@
+{
+  "flags": "-iE",
+  "patterns": [
+    "[?&](q|s|search|keyword|query|keywords|callback|jsonp|msg|message|title|comment|text|input|term|prompt|value|name|ref|reason|error)=[^&]",
+    "[?&][a-z0-9_]+=[^&]*(%3c|<|%22|\"|%27|'|%3e|>|javascript%3a|javascript:|onerror%3d|onerror=|onload%3d|onload=)[^&]*"
+  ]
+}

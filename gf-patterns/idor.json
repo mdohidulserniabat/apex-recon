@@ -1,0 +1,7 @@
+{
+  "flags": "-iE",
+  "patterns": [
+    "[?&](id|uid|user|user_id|userid|account|account_id|customer|customer_id|order|order_id|invoice|invoice_id|doc|doc_id|document|document_id|file|file_id|fid|profile|profile_id|member|member_id|number|no|pid|cid|gid|group|group_id|team|team_id|org|org_id|company|company_id|record|record_id|row|item|item_id|object|object_id|entity|entity_id|ref|ref_id|key|token|guid|uuid|ticket|ticket_id|message_id|msg_id|post_id|comment_id|reply_id|session_id|transaction_id|txn_id|payment_id|card_id|address_id|shipment_id|booking_id|tenant|tenant_id|tenantId|workspace|workspace_id|workspaceId|slug|handle|organization|orgId|resource|resource_id|resourceId|attachment|attachment_id|attachmentId)=[^&]",
+    "[?&](id|uid|user_id|account_id|customer_id|order_id|invoice_id|doc_id|profile_id|member_id|guid|uuid|ref|token|tenantId|workspaceId|orgId|resourceId)=[^&]"
+  ]
+}

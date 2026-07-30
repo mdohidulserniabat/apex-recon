@@ -1,0 +1,35 @@
+id: modern-web-exposures
+
+info:
+  name: Modern Web Framework Exposure Indicators
+  author: apex-recon
+  severity: medium
+  description: Detects publicly exposed source maps and framework debug/actuator endpoints. Review access and sensitivity manually.
+  tags: exposure,debug,source-map,nextjs,modern-web
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/_next/static/chunks/main.js.map"
+      - "{{BaseURL}}/actuator/env"
+      - "{{BaseURL}}/actuator/heapdump"
+    redirects: true
+    max-redirects: 2
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '"sourcesContent"'
+          - '"version":3'
+        condition: and
+      - type: word
+        part: body
+        words:
+          - '"activeProfiles"'
+          - '"propertySources"'
+        condition: and
+      - type: word
+        part: body
+        words:
+          - 'JAVA PROFILE 1.0.2'

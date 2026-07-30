@@ -1,0 +1,7 @@
+{
+  "flags": "-iE",
+  "patterns": [
+    "[?&](id|select|report|role|update|query|user|name|sort|where|search|params|process|row|view|table|from|sel|results|sleep|fetch|order|keyword|column|field|delete|string|number|filter|order_by|group_by|limit|offset|pid|uid|cid|item|category|catid|type|page_id|product_id|user_id|account|ref|order_id)=[0-9]+(&|$)",
+    "[?&][a-z0-9_]+=[^&]*(%27|'|%22|\"|--|%23|#|%3b|;|\\bor\\b\\s*[0-9]|\\band\\b\\s*[0-9]|union[+%20]select|sleep\\(|benchmark\\()[^&]*"
+  ]
+}

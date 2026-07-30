@@ -1,0 +1,6 @@
+{
+  "flags": "-iE",
+  "patterns": [
+    "[?&](file|document|folder|root|path|pg|style|pdf|template|php_path|doc|page|name|cat|dir|action|board|date|detail|download|prefix|include|inc|locate|show|site|type|view|content|layout|mod|conf|config|load|read|filepath|filename|url|resource|asset|module|lang|language|theme|skin|report|attachment)=(\\.\\./|%2e%2e%2f|%252e%252e%252f|\\.\\.%2f|\\.\\.%5c|\\.\\.\\\\|%c0%ae%c0%ae|%uff0e%uff0e|\\.\\.%00/|/etc/|/var/|/proc/self/|/windows/win\\.ini|/windows/system32/|php://|file://|data://|expect://|zip://|phar://|glob://|jar://|[a-zA-Z]:\\\\\\\\)"
+  ]
+}
