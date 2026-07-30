@@ -1,6 +1,0 @@
-{
-  "flags": "-iE",
-  "patterns": [
-    "[?&](redirect|redir|redirect_uri|redirect_url|url|return|returnurl|return_url|returnto|return_to|next|nexturl|dest|destination|goto|go|continue|out|view|link|target|forward|checkout_url|callback|success_url|cancel_url|login_url|logout_url|post_logout_redirect_uri|authorize_redirect_uri|client_redirect_uri|oauth_callback|sso_redirect|image_url|window|rurl|to|backurl|back_url|redirect_to|continue_url|u|r)=(https?%3a%2f%2f|https?:\\/\\/|\\/\\/|%2f%2f|%5c%5c|\\\\\\\\|%09\\/\\/|%00\\/\\/)"
-  ]
-}

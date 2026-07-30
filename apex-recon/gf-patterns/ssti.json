@@ -1,7 +1,0 @@
-{
-  "flags": "-iE",
-  "patterns": [
-    "[?&](template|preview|id|view|activity|name|content|redirect|page|message|comment|q|search|title|subject|body|text|input|value|query|data|param|render|format|tpl|layout|theme|display|email_template|subject_template)=[^&]",
-    "[?&][a-z0-9_]+=[^&]*(%7b%7b|\\{\\{|%24%7b|\\$\\{|%3c%25|<%|%23%7b|#\\{|%5b%5b|\\[\\[)[^&]*"
-  ]
-}
