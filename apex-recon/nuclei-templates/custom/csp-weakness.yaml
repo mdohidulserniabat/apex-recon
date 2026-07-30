@@ -1,0 +1,37 @@
+id: csp-weakness-detect
+info:
+  name: Weak / Missing Content-Security-Policy
+  author: apex-recon
+  severity: info
+  description: Detects missing CSP or weak directives (unsafe-inline, unsafe-eval, wildcard, JSONP/CDN gadget hosts).
+  tags: csp,misconfig,headers
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    redirects: true
+    max-redirects: 3
+    matchers-condition: or
+    matchers:
+      - type: dsl
+        name: missing-csp
+        dsl:
+          - "!contains(tolower(all_headers), 'content-security-policy')"
+      - type: word
+        name: unsafe-inline
+        part: header
+        words: ["unsafe-inline"]
+      - type: word
+        name: unsafe-eval
+        part: header
+        words: ["unsafe-eval"]
+      - type: regex
+        name: wildcard-or-gadget
+        part: header
+        regex:
+          - "(?i)content-security-policy:[^\\n]*(script-src[^;]*\\*|googleapis\\.com|jsdelivr\\.net|unpkg\\.com|gstatic\\.com|data:)"
+    extractors:
+      - type: regex
+        part: header
+        regex:
+          - "(?i)content-security-policy:.*"

@@ -1,0 +1,7 @@
+{
+  "flags": "-iE",
+  "patterns": [
+    "[?&](cmd|exec|command|execute|ping|code|payload|run|cli|system|shell|eval|passthru|process|job|task)=[^&]",
+    "[?&][a-z0-9_]+=[^&]*(%3b|;|%7c|\\||%60|`|%24%28|\\$\\(|%26%26|&&|%0a|\\\\n)[^&]*"
+  ]
+}

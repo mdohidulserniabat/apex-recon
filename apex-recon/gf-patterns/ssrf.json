@@ -1,0 +1,7 @@
+{
+  "flags": "-iE",
+  "patterns": [
+    "[?&](url|uri|dest|destination|redirect|redirect_uri|redirect_url|return|returnurl|next|out|view|to|file|path|continue|domain|host|site|feed|link|proxy|src|source|target|remote|image_url|imageurl|fetch|load|open|callback|api|data|reference|resource|forward|show|window|read|preview|q|webhook|endpoint|uri_path|server|address)=(https?%3a%2f%2f|https?:\\/\\/|\\/\\/|%2f%2f)",
+    "[?&][a-z0-9_]+=[^&]*(169\\.254\\.169\\.254|100\\.100\\.100\\.200|metadata\\.google|metadata\\.azure|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|%6c%6f%63%61%6c%68%6f%73%74|\\[::1\\]|10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|192\\.168\\.\\d{1,3}\\.\\d{1,3}|internal\\.|\\.local)[^&]*"
+  ]
+}

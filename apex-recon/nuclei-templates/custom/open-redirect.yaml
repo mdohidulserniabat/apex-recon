@@ -1,0 +1,28 @@
+id: open-redirect-generic
+info:
+  name: Generic Open Redirect
+  author: apex-recon
+  severity: medium
+  description: Tests common redirect parameters for open redirect.
+  tags: redirect,generic
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}?url=https://example.com"
+      - "{{BaseURL}}?redirect=https://example.com"
+      - "{{BaseURL}}?next=https://example.com"
+      - "{{BaseURL}}?return=https://example.com"
+      - "{{BaseURL}}?dest=https://example.com"
+      - "{{BaseURL}}?redirect_uri=https://example.com"
+      - "{{BaseURL}}?returnUrl=https://example.com"
+      - "{{BaseURL}}?goto=https://example.com"
+    stop-at-first-match: true
+    redirects: false
+    matchers-condition: and
+    matchers:
+      - type: status
+        status: [301, 302, 307, 308]
+      - type: regex
+        part: header
+        regex:
+          - "(?i)^location:\\s*https?://(www\\.)?example\\.com"

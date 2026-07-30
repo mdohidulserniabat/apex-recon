@@ -1,0 +1,38 @@
+id: subdomain-takeover-extra
+info:
+  name: Subdomain Takeover Fingerprints (supplemental)
+  author: apex-recon
+  severity: high
+  description: Supplements nuclei takeover templates with unclaimed-service body fingerprints.
+  tags: takeover,dns
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    redirects: true
+    matchers-condition: or
+    matchers:
+      - type: word
+        name: github-pages
+        words: ["There isn't a GitHub Pages site here"]
+      - type: word
+        name: heroku
+        words: ["No such app", "herokucdn.com/error-pages/no-such-app.html"]
+        condition: or
+      - type: word
+        name: aws-s3
+        words: ["The specified bucket does not exist", "NoSuchBucket"]
+        condition: or
+      - type: word
+        name: fastly
+        words: ["Fastly error: unknown domain"]
+      - type: word
+        name: shopify
+        words: ["Sorry, this shop is currently unavailable"]
+      - type: word
+        name: netlify
+        words: ["Not Found - Request ID"]
+      - type: word
+        name: vercel
+        words: ["The deployment could not be found", "DEPLOYMENT_NOT_FOUND"]
+        condition: or
